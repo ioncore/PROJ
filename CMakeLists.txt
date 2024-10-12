@@ -199,10 +199,10 @@ message(STATUS "nlohmann/json: ${NLOHMANN_JSON}")
 # Check for sqlite3
 ################################################################################
 
-find_program(EXE_SQLITE3 sqlite3)
-if(NOT EXE_SQLITE3)
-  message(SEND_ERROR "sqlite3 binary not found!")
-endif()
+#find_program(EXE_SQLITE3 sqlite3)
+#if(NOT EXE_SQLITE3)
+#  message(SEND_ERROR "sqlite3 binary not found!")
+#endif()
 
 # Deprecated variables since PROJ 9.4.0
 if(DEFINED SQLITE3_INCLUDE_DIR)
@@ -214,13 +214,13 @@ if(DEFINED SQLITE3_LIBRARY)
   set(SQLite3_LIBRARY ${SQLITE3_LIBRARY})
 endif()
 
-find_package(SQLite3 REQUIRED)
+#find_package(SQLite3 REQUIRED)
 
 # Would build and run with older versions, but with horrible performance
 # See https://github.com/OSGeo/PROJ/issues/1718
-if(SQLite3_VERSION VERSION_LESS "3.11")
-  message(SEND_ERROR "SQLite3 >= 3.11 required!")
-endif()
+#if(SQLite3_VERSION VERSION_LESS "3.11")
+#  message(SEND_ERROR "SQLite3 >= 3.11 required!")
+#endif()
 
 ################################################################################
 # Check for libtiff
